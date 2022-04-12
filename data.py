@@ -164,7 +164,7 @@ index_columns={
 26:['ilname','isno','isno'],
 27:['isno'],
 28:['istreetstate'],
-29:[]
+29:['fnamelname']
 }
 
 index_queries={
@@ -197,7 +197,7 @@ index_queries={
   26:['show index from personal_info;','show index from address;','show index from contact_details;'],
   27:['show index from personal_info;'],
   28:['show index from address;'],
-  29:[]
+  29:['show index from personal_info;']
 }
 
 Already_solved=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]

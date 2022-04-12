@@ -50,8 +50,6 @@ def page(page_number):
 
         number_of_rows="Number of rows returned:"+str(len(user_output))
 
-
-        
         if user_output==optimal_output and len(index_columns[page_number-1])==0:
             if Already_solved[page_number-1]==0:
                 update_score()
@@ -102,6 +100,16 @@ def page(page_number):
     
 def checkindex(page_number):
     count=0
+    if page_number==30:
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[10]=='FULLTEXT' and (rows[4]=='fname' or rows[4]=='lname'):
+                count+=1
+        if count==2:
+            return True
+        else:
+            return False
+
     for i in range(0,len(index_columns[page_number-1])):
         index_output=run_query(index_queries[page_number-1][i])
         for rows in index_output:
