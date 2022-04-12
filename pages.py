@@ -83,7 +83,7 @@ def page(page_number):
             time_taken="Time taken: "+str(round(total_time,3))+" sec"
             container_time_taken.write(time_taken)
 
-        elif "create" or "alter" in query:
+        elif 'create' in query or 'alter' in query:
             container_output.write("Query Successfully Executed")
             time_taken="Time taken: "+str(round(total_time,3))+" sec"
             container_time_taken.write(time_taken)

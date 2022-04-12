@@ -23,7 +23,7 @@ Question_Queries=[
     "To display all the personal information of the first 20 patients whose first name is Marion ordered by age in descending order",
     "To display the first name of patients who are married.",
     "To display the last name of patients who are not married and have their first name as 'Alex'.",
-    "To display all the personal information of first 1000000 patients who are not married and have ctime higher than 2020/01/01.",
+    "To display all the personal information of first 5000 patients who are not married and have ctime higher than 2020/01/01 and first name is 'Alex'.",
     "To  display the firstname and lastname of patients whose age is either 38 or 40?",
     "To display the first name of patients(without repetition) whose age is 38 or last name is Taylor.",
     "To display all the contact details of patients whose serial number is 9999975, phone number is (726) 238-9825 and email id is pij@darefhaf.lb",
@@ -87,7 +87,7 @@ Output_queries=[
   "Select * from personal_info where fname='Marion' order by age desc limit 20;",
   "Select fname from personal_info where marital_status='true';",
   "Select fname from personal_info where marital_status='false' and fname='Alex';",
-  "",
+  "Select * from personal_info where marital_status='false' and ctime>'2020-01-01' and fname='Alex' limit 5000;",
   "select fname,lname from personal_info where age IN (38,40);",
   "Select fname from personal_info where age=38 Union distinct Select fname from personal_info where lname='Taylor';",
   "select * from contact_details where sno=9999975  and  phone_number='(726) 238-9825' and email='pij@darefhaf.lb';",
@@ -120,8 +120,8 @@ Output_answers=[
 ,"Query:Select * from personal_info where fname='Marion' order by lname asc,age desc; Index on fname can be created.(MySQL Version Below 8.0) Index on fname,lname,age can be created(MySQL Version After 8.0)"
 ,"Query:Select * from personal_info where fname='Marion' order by age desc limit 20; Index on fname,age can be created. Normally a LIMIT cannot be applied until after lots of rows are gathered and then sorted according to the ORDER BY. But, if the INDEX gets all the way through the ORDER BY, only (OFFSET + LIMIT) rows need to be gathered. So, in these cases, you win the lottery with your new index."
 ,"Query:Select fname from personal_info where marital_status='true'; No index should be created INDEX(flag) is almost never useful if flag has very few values. More specifically, when you say WHERE flag = 1 and '1' occurs more than 20 percentage of the time, such an index will be shunned. The Optimizer would prefer to scan the table instead of bouncing back and forth between the index and the data for more than 20 percentage of the rows."
-,"Select lname from personal_info where marital_status='false' and fname='Alex'; Index on flag,fname can be created. That would call for a composite (compound) index starting with a flag: INDEX(flag, fname). Such an index is likely to be very beneficial. And it is likely to be more beneficial than INDEX(fname). In this case, the flag is marital_status."
-,""
+,"Query:Select lname from personal_info where marital_status='false' and fname='Alex'; Index on flag,fname can be created. That would call for a composite (compound) index starting with a flag: INDEX(flag, fname). Such an index is likely to be very beneficial. And it is likely to be more beneficial than INDEX(fname). In this case, the flag is marital_status."
+,"Query: Select * from personal_info where marital_status='false' and ctime>'2020-01-01' and fname='Alex' limit 5000; Index on marital_status,fname,ctime makes the query faster."
 ,"A) select fname,lname from personal_info where age IN (38,40); Still it takes much time to process if there is no  index on age column B) There is an index on age column then the above query performs more efficiently"
 ,"Unoptimised answer: select distinct(fname) from personal_info where age=38 or lname='Taylor'; Optimised answer: Select fname from personal_info where age=38 Union distinct Select fname from personal_info where lname='Taylor'; It is better to have indexes on age,lname columns separately for better performance"
 ,"Query:select * from contact_details where sno=9999975  and  phone_number='(726) 238-9825' and email='pij@darefhaf.lb'; Index on sno,phone_number and email must be created A covering index is an index that contains all the columns in the SELECT."
@@ -154,7 +154,7 @@ index_columns={
 16:['ifnameage'],
 17:[],
 18:['imarital_statusfname'],
-19:[],
+19:['imarital_statusfnamectime'],
 20:['iage'],
 21:['iage','ilname'],
 22:['isnophone_numberemail'],
@@ -187,7 +187,7 @@ index_queries={
   16:['show index from personal_info;'],
   17:[],
   18:['show index from personal_info;'],
-  19:[],
+  19:['show index from personal_info;'],
   20:['show index from personal_info;'],
   21:['show index from personal_info;','show index from personal_info;'],
   22:['show index from contact_details;'],
