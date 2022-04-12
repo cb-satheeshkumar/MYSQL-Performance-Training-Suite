@@ -49,19 +49,22 @@ def page(page_number):
         total_time=toc-tic
 
         number_of_rows="Number of rows returned:"+str(len(user_output))
-        error_rate=round(total_time,3)-round(optimised_time[page_number-1],3)
 
-        if user_output!=optimal_output:
-            container_output.write("Incorrect Query!")
+
         
-        elif user_output==optimal_output and optimised_time[page_number-1]==999:
+        if user_output==optimal_output and len(index_columns[page_number-1])==0:
+            if Already_solved[page_number-1]==0:
+                update_score()
+                Already_solved[page_number-1]=1
+
             container_output.write("Correct Query!")
             container_number_of_rows.write(number_of_rows)
             time_taken="Time taken: "+str(round(total_time,3))+" sec"
             container_time_taken.write(time_taken)
             score="Score: "+str(getscore())
+            container_score.write(score)
 
-        elif user_output==optimal_output and error_rate<0.3:
+        elif user_output==optimal_output and checkindex(page_number):
 
             if Already_solved[page_number-1]==0:
                 update_score()
@@ -84,6 +87,9 @@ def page(page_number):
             container_output.write("Query Successfully Executed")
             time_taken="Time taken: "+str(round(total_time,3))+" sec"
             container_time_taken.write(time_taken)
+
+        elif user_output!=optimal_output:
+            container_output.write("Incorrect Query!")
             
         
                 
@@ -92,5 +98,19 @@ def page(page_number):
 
     if show_hint:
         container_hint.write(Hints[page_number-1])
+    
+def checkindex(page_number):
+    count=0
+    for i in range(0,len(index_columns[page_number-1])):
+        index_output=run_query(index_queries[page_number-1][i])
+        for rows in index_output:
+            if rows[2]==index_columns[page_number-1][i]:
+                count=count+1
+                break
+    if count==len(index_columns[page_number-1]):
+        return True
+    else:
+        return False
+
 
     

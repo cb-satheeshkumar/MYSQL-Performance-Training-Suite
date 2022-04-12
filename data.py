@@ -133,14 +133,72 @@ Output_answers=[
 ,"Unoptimized solution: Select fname from personal_info where fname like 'A%' and sno in (select sno from address where street like 'V%' order by state);Optimised solution:Select fname from personal_info join (select * from address where street like 'V%' order by state)b using(sno) where fname like 'A%'; Combined Index on columns street,state will increase query performance"
 ,"Unoptimised solution: Select * from personal_info where fname='Alice' or lname='Parker'; Optimised solution: Create fulltext on fname and name so that it would be easy to search in both columns ALTER TABLE personal_info ADD FULLTEXT(fname,lname); Select * from personal_info where MATCH(fname,lname) AGAINST('alice parker'); In against you can add whatever name you want to search in both fname and lname separated by   space"
 ]
-optimised_time =[1.87386989593505,0.723253965377807,999,0.976470947265625,0.410427808761596,1.29194617271423,999,1.07339119911193,
- 0.03472900390625,0.00398921966552734,0.102567911148071,
- 1.64467310905456,0.00529789924621582,0.136365890502929,
- 0.0196638107299804,0.327220201492309,0.00558304786682128,999
- ,0.0823619365692138,0,1.79473304748535,0.516838073730468,
- 0.00260281562805175,0.022968053817749,0.654869794845581,
- 0.29681396484375,0.453936100006103,3.57099485397338,4.91334199905395,
- 0.94450569152832]
+
+index_columns={
+0:['iage'],
+1:['iagegender'],
+2:[],
+3:['iage'],
+4:['iage'],
+5:['ilname'],
+6:[],
+7:['igenderfname'],
+8:['ilnamefname'],
+9:['ifnamelname'],
+10:['iage'],
+11:['ifname'],
+12:['ifnamelnameage'],
+13:['ifnamelname'],
+14:['ifnamelname'],
+15:['ifnamelnameage'],
+16:['ifnameage'],
+17:[],
+18:['imarital_statusfname'],
+19:[],
+20:['iage'],
+21:['iage','ilname'],
+22:['isnophone_numberemail'],
+23:['ilnamefname'],
+24:['istatectime'],
+25:['ifname','isno'],
+26:['ilname','isno','isno'],
+27:['isno'],
+28:['istreetstate'],
+29:[]
+}
+
+index_queries={
+  0:['show index from personal_info;'],
+  1:['show index from personal_info;'],
+  2:[],
+  3:['show index from personal_info;'],
+  4:['show index from personal_info;'],
+  5:['show index from personal_info;'],
+  6:[],
+  7:['show index from personal_info;'],
+  8:['show index from personal_info;'],
+  9:['show index from personal_info;'],
+  10:['show index from personal_info;'],
+  11:['show index from personal_info;'],
+  12:['show index from personal_info;'],
+  13:['show index from personal_info;'],
+  14:['show index from personal_info;'],
+  15:['show index from personal_info;'],
+  16:['show index from personal_info;'],
+  17:[],
+  18:['show index from personal_info;'],
+  19:[],
+  20:['show index from personal_info;'],
+  21:['show index from personal_info;','show index from personal_info;'],
+  22:['show index from contact_details;'],
+  23:['show index from personal_info;'],
+  24:['show index from address;'],
+  25:['show index from personal_info;','show index from address;'],
+  26:['show index from personal_info;','show index from address;','show index from contact_details;'],
+  27:['show index from personal_info;'],
+  28:['show index from address;'],
+  29:[]
+}
 
 Already_solved=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
