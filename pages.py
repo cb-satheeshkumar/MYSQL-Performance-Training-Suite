@@ -98,6 +98,7 @@ def page(page_number):
 
     if show_hint:
         container_hint.write(Hints[page_number-1])
+        Already_solved[page_number-1]=1
     
 def checkindex(page_number):
     count=0
