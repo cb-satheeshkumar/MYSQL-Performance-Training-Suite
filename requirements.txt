@@ -1,1 +1,3 @@
+#MYSQL CONNECTOR VERSION SPECIFYING FILE
+
 mysql-connector-python==8.0.28

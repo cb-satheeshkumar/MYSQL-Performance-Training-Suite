@@ -14,7 +14,7 @@ He comes across the concept of indexes and needs help applying it in his databas
     first row and then read through the entire table to find the relevant rows. The larger the table, the more this costs. 
     If the table has an index for the columns in question, MySQL can quickly determine the position to seek to in the 
     middle of the data file without having to look at all the data. This is much faster than reading every row sequentially.''')
-    st.write('''check out official documentation [here](https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html
+    st.write('''Check out official documentation [here](https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html
 )''')
     st.subheader('''Steps to Load Peter's database into your local system:-''')
     st.write('''
@@ -58,3 +58,16 @@ He comes across the concept of indexes and needs help applying it in his databas
     st.write('''Hooray! The tables values have been successfully loaded!
 	We’re all set to begin! 
 ''')
+    st.subheader('Rules to play the game:')
+    st.write(' ')
+    st.write('1) Index names must always be in the format “i<column_name1><column_name2>.." ')
+    st.write('      For example: ')
+    st.write('      Index on column age → iage')
+    st.write('      Index on columns fname and age → ifnameage')
+    st.write(' ')
+    st.write('2) Answering a question correctly without using any hint adds your score by 2.')
+    st.write('      If output is shown, the score does not change.')
+    
+
+
+    
