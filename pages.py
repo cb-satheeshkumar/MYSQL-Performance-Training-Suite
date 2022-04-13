@@ -121,7 +121,7 @@ def page(page_number):
     if show_output:
         container_optimised.write(Output_answers[page_number-1])
         Attempted[page_number-1]=1
-        Opened_hints[page_number]=2
+        Opened_hints[page_number-1]=2
 
     #Logic when show hint button is pressed
     if show_hint:
