@@ -233,7 +233,7 @@ schema={
   19:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
   20:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
   21:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
-  22:['address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  22:['contact_details(INT sno, TEXT email, TEXT phone_number, TIMESTAMP ctime, TIMESTAMP mtime)'],
   23:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
   24:['address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
   25:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime) || ','address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
