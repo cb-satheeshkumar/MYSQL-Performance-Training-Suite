@@ -1,6 +1,7 @@
 import desc
 import streamlit as st
 
+#Function to display the description page
 def description():
     st.title('Description')
     st.subheader('Problem Statement')

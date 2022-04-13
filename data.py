@@ -1,40 +1,43 @@
+#Headings for sidebar
 Headings=['DESCRIPTION','AND1','AND2','AND3','RANGEOFVALUES1','RANGEOFVALUES2','RANGEOFVALUES3','RANGEOFVALUES4','RANGEOFVALUES5'
 ,'INDEXORDER','GROUPBY1','GROUPBY2','GROUPBY3','ORDERBY1','ORDERBY2','ORDERBY3','ORDERBY4','ORDERBY5',
 'FLAGS AND LOW CARDINALITY1','FLAGS AND LOW CARDINALITY2','FLAGS AND LOW CARDINALITY3','OR1','OR2','COVERINGINDEX','TEXT/BLOB',
 'DATE','JOIN1','JOIN2','IN SELECT1','IN SELECT2','FULLTEXT'
 ]
+#List of Questions
 Question_Queries=[
-    'To display the personal information of all the patients whose age is 45.',
-    'To display details of patients whose age is 38 and gender is male?',
-    "To display the details of patients whose last name is 'Taylor'. (Note: Case insensitive)",
-    'To display the count of patients whose age is greater than 40?',
-    'To display the count of patients whose age is between 40 and 50?',
-    'To display all the first names of patients whose last name starts with letter T?',
-    "To display all the first names of patients whose last name ends with letter 'r' ",
-    "To display the count of patients whose first name starts with letter 'A' and gender is Male?",
-    "To display details of patients whose first name starts with 'A' and last name starts with 'Taylor'?",
-    "To display first name and last name of patients whose firstname is Marion and lastname is Marshall and grouped by firstname and lastname",
-    "To display all the different age values in personal_info table and also the count of the number of people in that age?",
-    "To display first name and length of the last name of patients, with first name as 'Marion' and grouped by first name and the length of last name",
-    "To display the age of patients in descending order whose first name is Marion and last name is Marshall",
-    "To display the first name, last name and maximum age of patients whose first name is Alex grouped by the first and last names and ordered by last name",
-    "To display the first name, last name and maximum age of patients whose first name is Alex, last name starts with D,  grouped by the first and last names and ordered by the maximum ages",
-    "To display all the personal information of patients whose first name is Marion ordered by last name in ascending and age in descending order.",
-    "To display all the personal information of the first 20 patients whose first name is Marion ordered by age in descending order",
-    "To display the first name of patients who are married.",
-    "To display the last name of patients who are not married and have their first name as 'Alex'.",
-    "To display all the personal information of first 5000 patients who are not married and have ctime higher than 2020/01/01 and first name is 'Alex'.",
-    "To  display the firstname and lastname of patients whose age is either 38 or 40?",
-    "To display the first name of patients(without repetition) whose age is 38 or last name is Taylor.",
-    "To display all the contact details of patients whose serial number is 9999975, phone number is (726) 238-9825 and email id is pij@darefhaf.lb",
-    "To display all the personal information of patients with first name starting with Al and last name as Taylor",
-    "To display a street whose ctime is after 2020-01-01 and belongs to state 'MO'",
-    "To display fname and city of patients whose fname ='Alice'?",
-    "To display fname and city and email of patients whose lname='Taylor'?",
-    "To display first names of patients whose first name starts with 'T' and street name starts with 'A'?",
-    "To display first name that starts with 'A' and street name starts with 'V', ordered by state?",
-    "To display details of patients whose first name or last name is either Alice or Parker"
+    'Display the personal information of all the patients whose age is 45.',
+    'Display the details of patients whose age is 38 and gender is male?',
+    "Display the details of patients whose last name is 'Taylor'. (Note: Case insensitive)",
+    'Display the count of patients whose age is greater than 40?',
+    'Display the count of patients whose age is between 40 and 50?',
+    'Display all the first names of patients whose last name starts with letter T?',
+    "Display all the first names of patients whose last name ends with letter 'r' ",
+    "Display the count of patients whose first name starts with letter 'A' and gender is Male?",
+    "Display the firstname and lastname of patients whose first name starts with 'A' and last name is 'Taylor'?",
+    "Display the first name and last name of patients whose firstname is Marion and lastname is Marshall and grouped by firstname and lastname",
+    "Display all the different age values in personal_info table and also the count of number of people in that age sorted by age in ascending order",
+    "Display the first name and length of the last name of patients, with first name as 'Marion' and grouped by first name and the length of last name",
+    "Display the age of patients in descending order whose first name is Marion and last name is Marshall",
+    "Display the first name, last name and maximum age of patients whose first name is Alex grouped by the first and last names and ordered by last name",
+    "Display the first name, last name and maximum age of patients whose first name is Alex, last name starts with D,  grouped by the first and last names and ordered by the maximum ages",
+    "Display all the personal information of patients whose first name is Marion ordered by last name in ascending and age in descending order.",
+    "Display all the personal information of the first 20 patients whose first name is Marion ordered by age in descending order",
+    "Display the first name of patients who are married.",
+    "Display the last name of patients who are not married and have their first name as 'Alex'.",
+    "Display all the personal information of first 5000 patients who are not married and have ctime higher than 2020/01/01 and first name is 'Alex'.",
+    "Display the firstname and lastname of patients whose age is either 38 or 40?",
+    "Display the first name of patients(without repetition) whose age is 38 or last name is Taylor.",
+    "Display all the contact details of patients whose serial number is 9999975, phone number is (726) 238-9825 and email id is pij@darefhaf.lb",
+    "Display all the personal information of patients with first name starting with Al and last name as Taylor",
+    "Display a street whose ctime is after 2020-01-01 and belongs to state 'MO'",
+    "Display the fname and city of patients whose fname ='Alice'?",
+    "Display the fname and city and email of patients whose lname='Taylor'?",
+    "Display the first name of patients whose first name starts with 'T' and street name starts with 'A'?",
+    "Display the first name that starts with 'A' and street name starts with 'V', ordered by state?",
+    "Display the details of patients whose first name or last name is either Alice or Parker"
       ]
+#List of Hints
 Hints=[
 'Given a WHERE with a bunch of expressions connected by AND: Include the columns (if any), in any order, that are compared to a constant and not hidden in a function.'
 ,'Given a WHERE with a bunch of expressions connected by AND: Include the columns (if any), in any order, that are compared to a constant and not hidden in a function.'
@@ -67,6 +70,8 @@ Hints=[
 ,"Use JOIN to combine the tables and combined indexes."
 ,"Use fulltext to search fname and lname columns together."
 ]
+
+#List of Optimised Output Queries
 Output_queries=[
   'select * from personal_info where age=45;',
   "select * from personal_info where age=38 and gender='M'",
@@ -86,7 +91,7 @@ Output_queries=[
   "Select * from personal_info where fname='Marion' order by lname asc,age desc;",
   "Select * from personal_info where fname='Marion' order by age desc limit 20;",
   "Select fname from personal_info where marital_status='true';",
-  "Select fname from personal_info where marital_status='false' and fname='Alex';",
+  "Select lname from personal_info where marital_status='false' and fname='Alex';",
   "Select * from personal_info where marital_status='false' and ctime>'2020-01-01' and fname='Alex' limit 5000;",
   "select fname,lname from personal_info where age IN (38,40);",
   "Select fname from personal_info where age=38 Union distinct Select fname from personal_info where lname='Taylor';",
@@ -101,6 +106,8 @@ Output_queries=[
 
 
 ]
+
+#List of Answers
 Output_answers=[
 "Query: select * from personal_info where age=45;We have to create an index on column age."
 ,"Query : select * from personal_info where age=38 and gender = 'M'; We have to create an index on columns age and gender."
@@ -134,6 +141,7 @@ Output_answers=[
 ,"Unoptimised solution: Select * from personal_info where fname='Alice' or lname='Parker'; Optimised solution: Create fulltext on fname and name so that it would be easy to search in both columns ALTER TABLE personal_info ADD FULLTEXT(fname,lname); Select * from personal_info where MATCH(fname,lname) AGAINST('alice parker'); In against you can add whatever name you want to search in both fname and lname separated by   space"
 ]
 
+#Dictionary of indexes for each query
 index_columns={
 0:['iage'],
 1:['iagegender'],
@@ -167,6 +175,7 @@ index_columns={
 29:['fnamelname']
 }
 
+#Dictionary of show index query for each query
 index_queries={
   0:['show index from personal_info;'],
   1:['show index from personal_info;'],
@@ -200,13 +209,57 @@ index_queries={
   29:['show index from personal_info;']
 }
 
-Already_solved=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+#Dictionary of schemas for each query
+schema={
+  0:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  1:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  2:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  3:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  4:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  5:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  6:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  7:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  8:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  9:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  10:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  11:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  12:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  13:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  14:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  15:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  16:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  17:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  18:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  19:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  20:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  21:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  22:['address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  23:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  24:['address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  25:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime) || ','address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  26:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime) || ','address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime) || ','contact_details(INT sno, TEXT email, TEXT phone_number, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  27:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
+  28:['address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  29:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)']
+}
 
-Final_score=0
+Already_solved=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] #To keep track of solved questions
 
+Opened_hints=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] #To keep track of opened hints question and output answer question
+
+Attempted=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] #To keep track of completed questions
+
+Final_score=0 #Variable which contains the score of the user
+
+#Function to get the score
 def getscore():
     return Final_score
 
-def update_score():
+#Function to update the score
+def update_score(page_number):
     global Final_score
-    Final_score=Final_score+1
+    if Opened_hints[page_number-1]==0:
+        Final_score=Final_score+2
+    elif Opened_hints[page_number-1]==1:
+        Final_score=Final_score+1
+    
