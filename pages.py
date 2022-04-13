@@ -105,8 +105,8 @@ def page(page_number):
             time_taken="Time taken: "+str(round(total_time,3))+" sec"
             container_time_taken.write(time_taken)
 
-        #To handle queries which contains show, index and desc
-        elif 'show' in query or 'index' in query:
+        #To handle queries which contains show, index and explain
+        elif 'show' in query or 'index' in query or 'explain' in query:
             container_output.write("Query Successfully Executed!")
             container_number_of_rows.write("Try this query in Terminal for Output")
             time_taken="Time taken: "+str(round(total_time,3))+" sec"
