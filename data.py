@@ -204,7 +204,7 @@ index_queries={
   24:['show index from address;'],
   25:['show index from personal_info;','show index from address;'],
   26:['show index from personal_info;','show index from address;','show index from contact_details;'],
-  27:['show index from personal_info;'],
+  27:['show index from address;'],
   28:['show index from address;'],
   29:['show index from personal_info;']
 }
