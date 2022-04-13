@@ -238,8 +238,8 @@ schema={
   24:['address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
   25:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime) || ','address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
   26:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime) || ','address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime) || ','contact_details(INT sno, TEXT email, TEXT phone_number, TIMESTAMP ctime, TIMESTAMP mtime)'],
-  27:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)'],
-  28:['address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  27:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime) || ',' address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
+  28:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime) || ',' address(INT sno, TEXT street, TEXT city, TEXT state, TEXT zip, TIMESTAMP ctime, TIMESTAMP mtime)'],
   29:['personal_info(INT sno, TEXT fname, TEXT lname, INT age, CHAR(2) gender, TEXT marital_status,TIMESTAMP ctime, TIMESTAMP mtime)']
 }
 
