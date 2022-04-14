@@ -29,6 +29,10 @@ This game helps the player understand the rules and guidelines to be followed wh
 
   6) Open terminal and move to the repository folder. 
      
+     Enter → pip install mysql-connector-python
+     
+  7) Finally, to run the app, 
+  
      Enter → streamlit run main.py
      
      The app will open up in your browser. 
