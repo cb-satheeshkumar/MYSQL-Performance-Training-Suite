@@ -33,9 +33,9 @@ Headings=['DESCRIPTION',
 ]
 #List of Questions
 Question_Queries=[
-    'Display the sno, fname, lname, age, gender, marital_status, ctime, mtime of all the patients whose age is 45.?',
+    'Display the sno, fname, lname, age, gender, marital_status, ctime, mtime of all the patients whose age is 45?',
     'Display the sno, fname, lname, age, gender, marital_status, ctime, mtime of all the patients whose age is 38 and gender is male?',
-    "Display the sno, fname, lname, age, gender, marital_status, ctime, mtime of all the patients whose last name is 'Taylor'. (Note: Case insensitive)",
+    "Display the sno, fname, lname, age, gender, marital_status, ctime, mtime of all the patients whose last name is 'Taylor' (Note: Case insensitive)?",
     'Display the count of patients whose age is greater than 40?',
     'Display the count of patients whose age is between 40 and 50?',
     'Display all the first names of patients whose last name starts with letter T?',
