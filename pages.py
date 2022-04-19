@@ -10,7 +10,8 @@ def page(page_number):
     
     col1,col2,col3,col4,col5,col6,col7=st.columns(7)
     with col1:
-        st.title(Headings[page_number]) #To display Title of each question
+        title="Question:"+str(page_number)
+        st.title(title) #To display Title of each question
     with col7:
         container_score=st.empty()
         score="Score: "+str(getscore())

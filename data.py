@@ -1,8 +1,35 @@
 #Headings for sidebar
-Headings=['DESCRIPTION','AND1','AND2','AND3','RANGEOFVALUES1','RANGEOFVALUES2','RANGEOFVALUES3','RANGEOFVALUES4','RANGEOFVALUES5'
-,'INDEXORDER','GROUPBY1','GROUPBY2','GROUPBY3','ORDERBY1','ORDERBY2','ORDERBY3','ORDERBY4','ORDERBY5',
-'FLAGS AND LOW CARDINALITY1','FLAGS AND LOW CARDINALITY2','FLAGS AND LOW CARDINALITY3','OR1','OR2','COVERINGINDEX','TEXT/BLOB',
-'DATE','JOIN1','JOIN2','IN SELECT1','IN SELECT2','FULLTEXT'
+Headings=['DESCRIPTION',
+'Q1 - Based on AND ',
+'Q2 - Based on AND ',
+'Q3 - Based on AND ',
+'Q4 - Based on Range of Values ',
+'Q5 - Based on Range of Values ',
+'Q6 - Based on Range of Values ',
+'Q7 - Based on Range of Values ',
+'Q8 - Based on Range of Values '
+,'Q9 - Based on Index Order',
+'Q10 - Based on GROUP BY ',
+'Q11 - Based on GROUP BY',
+'Q12 - Based on GROUP BY',
+'Q13 - Based on ORDER BY',
+'Q14 - Based on ORDER BY',
+'Q15 - Based on ORDER BY',
+'Q16 - Based on ORDER BY',
+'Q17 - Based on ORDER BY',
+'Q18 - Based on FLAGS & CARDINALITY',
+'Q19 - Based on FLAGS & CARDINALITY',
+'Q20 - Based on FLAGS & CARDINALITY',
+'Q21 - Based on OR',
+'Q22 - Based on OR',
+'Q23 - Based on Covering Index',
+'Q24 - Based on TEXT/BLOB',
+'Q25 - Based on DATE',
+'Q26 - Based on JOIN',
+'Q27 - Based on JOIN',
+'Q28 - Based on IN SELECT',
+'Q29 - Based on IN SELECT',
+'Q30 - Based on FULLTEXT '
 ]
 #List of Questions
 Question_Queries=[
