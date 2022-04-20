@@ -1,8 +1,8 @@
 #Headings for sidebar
 Headings=['DESCRIPTION',
-'Q1 - Based on AND ',
+'Q1 - Based on "column = const" ',
 'Q2 - Based on AND ',
-'Q3 - Based on AND ',
+'Q3 - Based on Functions ',
 'Q4 - Based on Range of Values ',
 'Q5 - Based on Range of Values ',
 'Q6 - Based on Range of Values ',
