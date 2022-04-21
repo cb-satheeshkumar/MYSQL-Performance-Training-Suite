@@ -9,14 +9,14 @@ def description():
     MySQL. Soon, the database grows in size and Peter realises that he needs a faster and cost effective way to retrieve his data. 
 He comes across the concept of indexes and needs help applying it in his database. 
  ''')
-    st.subheader('About Indexes:')
+    st.subheader('About Indexes')
     st.write('''Indexes are used to find rows with specific column values quickly. Without an index, MySQL must begin with the 
     first row and then read through the entire table to find the relevant rows. The larger the table, the more this costs. 
     If the table has an index for the columns in question, MySQL can quickly determine the position to seek to in the 
     middle of the data file without having to look at all the data. This is much faster than reading every row sequentially.''')
     st.write('''Check out official documentation [here](https://dev.mysql.com/doc/refman/8.0/en/optimization-indexes.html
 )''')
-    st.subheader('''Steps to Load Peter's database into your local system:-''')
+    st.subheader('''Steps to Load Peter's database into your local system''')
     st.write('''
     1. Installing Mysql server: Download it from this [link](https://dev.mysql.com/downloads/mysql/) and then Install mysql by opening the downloaded file 
     2. In your command line, create a database named “Patient_Details” and use it(Run below command in mysql to create database).
@@ -58,7 +58,7 @@ He comes across the concept of indexes and needs help applying it in his databas
     st.write('''Hooray! The tables values have been successfully loaded!
 	We’re all set to begin! 
 ''')
-    st.subheader('Rules to play the game:')
+    st.subheader('Rules to play the game')
     st.write(' ')
     st.write('1) Index names must always be in the format “i<column_name1><column_name2>.." ')
     st.write('      For example: ')

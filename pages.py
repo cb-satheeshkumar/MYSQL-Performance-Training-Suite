@@ -14,7 +14,7 @@ def page(page_number):
         st.title(title) #To display Title of each question
     with col7:
         container_score=st.empty()
-        score="Score: "+str(getscore())
+        score="Score:"+str(getscore())
         container_score.write(score) #Container to Display Score
     container_schema=st.empty()
     schema_of_tables=''
