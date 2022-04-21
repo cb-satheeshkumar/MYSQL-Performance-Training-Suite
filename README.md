@@ -2,12 +2,15 @@
 MYSQL training performance suite is an interactive game created using MySQL and Streamlit. 
 This game helps the player understand the rules and guidelines to be followed while adding indexes to a large database.
 
-
 # Steps to run the app:-
 
-  1) Clone this repository into your local system.
+  1) Install MySQL into your system. ( Link - https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+
+  2) Install streamlit into your system. ( Enter command "pip install streamlit" in your terminal).
   
-  2) Open the cloned repository in an editor of your choice.
+  2) Clone this repository into your local system.
+  
+  3) Open the cloned repository in an editor of your choice.
   
   3) In the repository, create a folder named “.streamlit”.
   
