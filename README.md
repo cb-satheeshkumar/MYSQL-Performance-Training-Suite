@@ -4,7 +4,7 @@ This game helps the player understand the rules and guidelines to be followed wh
 
 # Steps to run the app:-
 
-  1) Install MySQL into your system. ( Link - https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+  1) Install MySQL into your system. (https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
 
   2) Install streamlit into your system. ( Enter command "pip install streamlit" in your terminal).
   
