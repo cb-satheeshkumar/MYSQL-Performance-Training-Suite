@@ -108,6 +108,7 @@ def page(page_number):
 
         #To handle queries which contains show, index and explain
         elif 'show' in query or 'index' in query or 'explain' in query:
+            st.write(user_output)
             container_output.write("Query Successfully Executed!")
             container_number_of_rows.write("Try this query in Terminal for Output")
             time_taken="Time taken: "+str(round(total_time,3))+" sec"
@@ -135,6 +136,58 @@ def page(page_number):
 #Function to check whether the user has created correct indexes or not  
 def checkindex(page_number):
     count=0
+
+    if page_number==21:
+        count_age=0
+        count_lname=0
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[4]=='age':
+                count_age+=1
+            elif rows[4]=='lname':
+                count_lname+=1
+        if count_age>0 and count_lname>0:
+            return True
+        else:
+            return False
+
+    if page_number==25:
+        count_fname=0
+        count_sno=0
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[4]=='fname':
+                count_fname+=1
+        index_output=run_query(index_queries[page_number-1][1])
+        for rows in index_output:
+            if rows[4]=='sno':
+                count_sno+=1
+        if count_fname>0 and count_sno>0:
+            return True
+        else:
+            return False
+    
+    if page_number==26:
+        count_lname=0
+        count_sno=0
+        count_sno1=0
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[4]=='lname':
+                count_lname+=1
+        index_output=run_query(index_queries[page_number-1][1])
+        for rows in index_output:
+            if rows[4]=='sno':
+                count_sno+=1
+        index_output=run_query(index_queries[page_number-1][2])
+        for rows in index_output:
+            if rows[4]=='sno':
+                count_sno1+=1
+        if count_fname>0 and count_sno>0 and count_sno1>0:
+            return True
+        else:
+            return False
+        
     #To handle the FULLTEXT query
     if page_number==30:
         index_output=run_query(index_queries[page_number-1][0])
@@ -147,12 +200,18 @@ def checkindex(page_number):
             return False
 
     #To check if the indexes are created with proper naming conventions
-    for i in range(0,len(index_columns[page_number-1])):
-        index_output=run_query(index_queries[page_number-1][i])
-        for rows in index_output:
-            if rows[2]==index_columns[page_number-1][i]:
-                count=count+1
-                break
+    index_output=run_query(index_queries[page_number-1][0])
+    sequence=0
+    for rows in index_output:
+        if rows[4]==index_columns[page_number-1][sequence]:
+            count=count+1
+            sequence+=1
+            if sequence!=rows[3]:
+                return False
+        else:
+            sequence=0
+        if sequence==len(index_columns[page_number-1]):
+            break
     if count==len(index_columns[page_number-1]):
         return True
     else:
