@@ -249,17 +249,17 @@ def checkindex(page_number):
         return False
 
     #Index order matters
+    count=0
     index_output=run_query(index_queries[page_number-1][0])
-    sequence=0
     for rows in index_output:
-        if rows[4]==index_columns[page_number-1][sequence]:
-            count=count+1
-            sequence+=1
-            if sequence!=rows[3]:
-                return False
+        if rows[4]==index_columns[page_number-1][count]:
+            count+=1
         else:
-            sequence=0
-        if sequence==len(index_columns[page_number-1]):
+            if rows[4]==index_columns[page_number-1][0]:
+                count=1
+            else:
+                count=0
+        if count==len(index_columns[page_number-1]):
             break
     if count==len(index_columns[page_number-1]):
         return True
