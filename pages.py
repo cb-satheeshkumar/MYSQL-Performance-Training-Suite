@@ -145,6 +145,8 @@ def checkindex(page_number):
                 count+=1
                 if count==3 and rows[3]==3:
                     return True
+                else:
+                    count=0
             else:
                 if rows[4]=='fname' or rows[4]=='lname':
                     count=1
@@ -161,8 +163,10 @@ def checkindex(page_number):
                 count+=1
                 if count==3 and rows[3]==3:
                     return True
+                else:
+                    count=0
             else:
-                if rows[4]=='fname' or rows[4]=='lname':
+                if rows[4]=='fname' or rows[4]=='marital_status':
                     count=1
                 else:
                     count=0
