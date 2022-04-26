@@ -248,6 +248,14 @@ def checkindex(page_number):
             return True
         return False
 
+    #Single Index
+    elif len(index_columns[page_number-1])==1:
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[4]==index_columns[page_number-1][0] and rows[3]==1:
+                return True
+        return False
+        
     #Index order matters
     count=0
     index_output=run_query(index_queries[page_number-1][0])
