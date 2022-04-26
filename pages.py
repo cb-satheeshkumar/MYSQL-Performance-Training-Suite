@@ -136,8 +136,33 @@ def page(page_number):
 #Function to check whether the user has created correct indexes or not  
 def checkindex(page_number):
     count=0
+    if page_number==13:
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[4]=='fname' or rows[4]=='lname':
+                count+=1
+            elif rows[4]=='age':
+                count+=1
+                if count==3 and rows[3]==3:
+                    return True
+            else:
+                count=0
+        return False
 
-    if page_number==21:
+    elif page_number==20:
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[4]=='fname' or rows[4]=='marital_status':
+                count+=1
+            elif rows[4]=='ctime':
+                count+=1
+                if count==3 and rows[3]==3:
+                    return True
+            else:
+                count=0
+        return False
+
+    elif page_number==22:
         count_age=0
         count_lname=0
         index_output=run_query(index_queries[page_number-1][0])
@@ -151,7 +176,7 @@ def checkindex(page_number):
         else:
             return False
 
-    if page_number==25:
+    elif page_number==26:
         count_fname=0
         count_sno=0
         index_output=run_query(index_queries[page_number-1][0])
@@ -167,7 +192,7 @@ def checkindex(page_number):
         else:
             return False
     
-    if page_number==26:
+    elif page_number==27:
         count_lname=0
         count_sno=0
         count_sno1=0
@@ -189,7 +214,7 @@ def checkindex(page_number):
             return False
         
     #To handle the FULLTEXT query
-    if page_number==30:
+    elif page_number==30:
         index_output=run_query(index_queries[page_number-1][0])
         for rows in index_output:
             if rows[10]=='FULLTEXT' and (rows[4]=='fname' or rows[4]=='lname'):
@@ -199,7 +224,31 @@ def checkindex(page_number):
         else:
             return False
 
-    #To check if the indexes are created with proper naming conventions
+    #Index order doesn't matter
+    elif page_number==2 or page_number==10 or page_number==19 or page_number==23:
+        explain_query='explain '+Output_queries[page_number-1]
+        explain_output=run_query(explain_query)
+        for rows in explain_output:
+            explain_index=rows[6]
+        index_output=run_query(index_queries[page_number-1][0])
+        for rows in index_output:
+            if rows[2]==explain_index:
+                count+=1
+
+        if page_number==2 and count==2:
+            return True
+
+        if page_number==10 and count==2:
+            return True
+
+        if page_number==19 and count==2:
+            return True
+
+        if page_number==23 and count==3:
+            return True
+        return False
+
+    #Index order matters
     index_output=run_query(index_queries[page_number-1][0])
     sequence=0
     for rows in index_output:
