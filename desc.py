@@ -60,12 +60,7 @@ He comes across the concept of indexes and needs help applying it in his databas
 ''')
     st.subheader('Rules to play the game')
     st.write(' ')
-    st.write('1) Index names must always be in the format “i<column_name1><column_name2>.." ')
-    st.write('      For example: ')
-    st.write('      Index on column age → iage')
-    st.write('      Index on columns fname and age → ifnameage')
-    st.write(' ')
-    st.write('2) Answering a question correctly without using any hint adds your score by 2.')
+    st.write('1) Answering a question correctly without using any hint adds your score by 2.')
     st.write('If the hint is used for answering a question the score adds up by 1')
     st.write('      If output is shown, the score does not change.')
     
