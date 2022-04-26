@@ -146,7 +146,10 @@ def checkindex(page_number):
                 if count==3 and rows[3]==3:
                     return True
             else:
-                count=0
+                if rows[4]=='fname' or rows[4]=='lname':
+                    count=1
+                else:
+                    count=0
         return False
 
     elif page_number==20:
@@ -159,7 +162,10 @@ def checkindex(page_number):
                 if count==3 and rows[3]==3:
                     return True
             else:
-                count=0
+                if rows[4]=='fname' or rows[4]=='lname':
+                    count=1
+                else:
+                    count=0
         return False
 
     elif page_number==22:
@@ -255,7 +261,7 @@ def checkindex(page_number):
             if rows[4]==index_columns[page_number-1][0] and rows[3]==1:
                 return True
         return False
-        
+
     #Index order matters
     count=0
     index_output=run_query(index_queries[page_number-1][0])
