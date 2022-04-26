@@ -143,7 +143,7 @@ def checkindex(page_number):
                 count+=1
             elif rows[4]=='age':
                 count+=1
-                if count==3 and rows[3]==3:
+                if count>=3 and rows[3]==3:
                     return True
                 else:
                     count=0
@@ -161,7 +161,7 @@ def checkindex(page_number):
                 count+=1
             elif rows[4]=='ctime':
                 count+=1
-                if count==3 and rows[3]==3:
+                if count>=3 and rows[3]==3:
                     return True
                 else:
                     count=0
